@@ -10,27 +10,22 @@ public abstract class Hero {
 
     Hero(String name,
          HeroType type,
-         Integer life,
+         Integer health,
          Body body,
          Integer basicAttack,
          Shield shield) throws Exception {
         this.name = name;
         this.type = type;
-        this.health = life;
+        this.health = health;
         this.body = body;
-        setBasicAttack();
+        setBasicAttack(basicAttack);
         this.shield = shield;
     }
 
-    Integer getBasicAttack() {
-        return basicAttack;
-    }
-
-    private void setBasicAttack() throws Exception {
+    private void setBasicAttack(Integer basicAttack) throws Exception {
         if (basicAttack < 50 || basicAttack > 150) {
-            throw new Exception(" Can not perform basic attack");
+            throw new RuntimeException("Can not perform basic attack");
         }
         this.basicAttack = basicAttack;
     }
-
 }
