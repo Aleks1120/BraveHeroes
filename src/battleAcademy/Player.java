@@ -32,7 +32,7 @@ public class Player {
 
     private void setLevel(Integer level) throws Exception {
         if (level > 30) {
-            throw new Exception("Has reached maximum level");
+            throw new RuntimeException("Has reached maximum level");
         }
         this.level = level;
     }
